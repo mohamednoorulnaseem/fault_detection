@@ -1,8 +1,7 @@
-tensorflow>=2.10
+tensorflow
 numpy
-opencv-python
 pillow
-scikit-learn
-matplotlib
 streamlit
-tqdm
+h5py
+matplotlib
+seaborn

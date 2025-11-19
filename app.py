@@ -41,3 +41,9 @@ if uploaded_file is not None:
     st.subheader("Prediction Result")
     st.write(f"**Class:** {index_to_class[pred_idx]}")
     st.write(f"**Confidence:** {confidence:.2f}%")
+
+# below the prediction block, show the confusion matrix if file exists
+import os
+if os.path.exists("confusion_matrix.png"):
+    st.subheader("Model evaluation (confusion matrix)")
+    st.image("confusion_matrix.png", use_column_width=True)
