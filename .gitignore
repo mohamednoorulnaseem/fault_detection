@@ -1,0 +1,7 @@
+.venv
+__pycache__
+*.pyc
+model.h5
+metal_defect_model.h5
+*.h5
+data/original/*   # optional: if you don't want dataset in repo
