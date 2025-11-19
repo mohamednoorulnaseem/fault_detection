@@ -1,145 +1,115 @@
-🚀 Project Overview
-This project is an AI-powered fault detection system for metal surface defects such as cracks, corrosion, and normal surfaces.
-It uses a Convolutional Neural Network (CNN) trained on metal images and provides:
+# 🛠️ Metal Surface Fault Detection
 
-✔ Automated image classification
-✔ Interactive Streamlit web app
-✔ Training, evaluation, and dataset processing scripts
-✔ Model stored using Git LFS
+### Crack • Corrosion • Normal Surface Classification Using Deep Learning
 
-🧠 Model Features
-Input size: 224×224
+![Banner](https://raw.githubusercontent.com/mohamednoorulnaseem/fault_detection/main/assets/banner.png)
 
-Handles 3 classes:
+---
 
-crack
+## 🚀 Overview
 
-corrosion
+This project is a **deep learning–based metal surface defect detection system** that identifies:
 
-normal
+- **Crack**
+- **Corrosion**
+- **Normal surface**
 
-Built using TensorFlow/Keras
+It uses a trained **CNN model (.h5)** and a clean **Streamlit web app** for image-based predictions.  
+Perfect for industrial inspection, automation, and quality control.
 
-Supports .bmp, .png, .jpg images
+---
 
-Includes:
+## 📂 Project Structure
 
-Saved trained model
-
-Confusion matrix
-
-Class index mapping
-
-📂 Project Directory Structure
-powershell
-Copy code
+```
 fault_detection/
-│
-├── app.py # Streamlit Web App
-├── src/
-│ ├── train.py # Model training script
-│ ├── evaluate.py # Model evaluation script
-│ └── preprocess.py # Dataset preprocessing
-│
-├── scripts/
-│ └── split_dataset.py # Train/Validation/Test splitter
-│
-├── data/
-│ ├── original/ # Raw dataset
-│ ├── processed/ # Preprocessed images
-│ └── sample/ # App test samples
-│
-├── model.h5 # Model file (LFS)
-├── metal_defect_model.h5 # Backup model (LFS)
-├── class_indices.json # Class mapping
-├── confusion_matrix.png # Eval results
-└── README.md
-🛠️ Installation
-1️⃣ Clone Repository
-bash
-Copy code
-git clone https://github.com/mohamednoorulnaseem/fault_detection.git
-cd fault_detection
-2️⃣ Create Virtual Environment
-bash
-Copy code
-python -m venv .venv
-source .venv/bin/activate # macOS/Linux
-.venv\Scripts\activate # Windows
-3️⃣ Install Dependencies
-nginx
-Copy code
+│── app.py                      # Streamlit web application
+│── metal_defect_model.h5       # Trained defect detection model (LFS)
+│── class_indices.json          # Class label mappings
+│── data/
+│   ├── original/
+│   │   ├── crack/              # Crack images
+│   │   ├── corrosion/          # Corrosion images
+│   │   ├── normal/             # Normal metal surface images
+│   └── sample/                 # Sample test images
+│── scripts/
+│   ├── train.py                # Model training script
+│   ├── split_dataset.py        # Train-test split script
+│── README.md                   # Project documentation
+│── requirements.txt            # Dependencies
+```
+
+---
+
+## 🧠 Features
+
+✔ Classifies **3 types of metal surface conditions**  
+✔ Uses a **TensorFlow / Keras CNN model**  
+✔ Includes **dataset split script**  
+✔ Comes with a ready-to-run **Streamlit UI**  
+✔ Git LFS enabled for large model files
+
+---
+
+## 🖥️ Run Locally
+
+### 1️⃣ Install dependencies
+
+```bash
 pip install -r requirements.txt
-4️⃣ Enable Git LFS (required for model files)
-nginx
-Copy code
-git lfs install
-git lfs pull
-▶️ Running the App
-Start the Streamlit Web Application
-arduino
-Copy code
+```
+
+### 2️⃣ Run the Streamlit app
+
+```bash
 streamlit run app.py
-You will see a local URL such as:
+```
 
-👉 http://localhost:8501
-👉 Upload an image → get the defect prediction.
+### 3️⃣ Upload any metal surface image
 
-📊 Evaluation
-To test the model:
+The model will output:
 
-bash
-Copy code
-python src/evaluate.py
-Outputs include:
+- Prediction label
+- Confidence score
 
-Accuracy
+---
 
-Confusion matrix
+## 🧪 Training the Model (Optional)
 
-Class predictions
+To retrain the model using your own dataset:
 
-📦 Dataset
-Dataset consists of:
+```bash
+python scripts/train.py
+```
 
-300 crack images
+To regenerate dataset splits:
 
-300 corrosion images
-
-300 normal images
-
-Stored in:
-data/original/<category>/
-
-Format: .bmp
-
-Use script to split dataset:
-
-bash
-Copy code
+```bash
 python scripts/split_dataset.py
-🧪 Training
-To retrain the model:
+```
 
-bash
-Copy code
-python src/train.py
-This will:
-✔ Process dataset
-✔ Train CNN
-✔ Save new model as model.h5
+---
 
-🤝 Contributing
-Feel free to open issues or submit pull requests to improve:
+## 📦 Technologies Used
 
-Model performance
+- **Python**
+- **TensorFlow / Keras**
+- **NumPy**
+- **Matplotlib**
+- **Streamlit**
+- **Git LFS**
 
-UI/UX
+---
 
-Dataset quality
+## 🎯 Future Improvements
 
-Documentation
+- Add real-time video defect detection
+- Improve model accuracy with augmentation
+- Deploy on cloud (AWS / GCP / Azure)
 
-📬 Contact
-Author: Mohamed Noorul Naseem
-GitHub: https://github.com/mohamednoorulnaseem
+---
+
+## 🙌 Author
+
+**Mohamed Noorul Naseem**  
+GitHub: [mohamednoorulnaseem](https://github.com/mohamednoorulnaseem)
