@@ -2,8 +2,6 @@
 
 ### Crack • Corrosion • Normal Surface Classification Using Deep Learning
 
-![Banner](https://raw.githubusercontent.com/mohamednoorulnaseem/fault_detection/main/assets/banner.png)
-
 ---
 
 ## 🚀 Overview
